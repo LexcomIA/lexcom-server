@@ -34,9 +34,9 @@ urlpatterns = [
     path(r'tiktok/<str:id>', tiktok.TiktTokApiView.as_view(
         {'get': 'video_interest'}), name="video_interest"),
 
-    # Endpoint for predictions Lexcom
-    path(r'lexcom_five_class/', lexcomia.LexcomIA_ApiView.as_view(
-        {'post': 'probability_percentage'}), name="probability_percentage"),
+    # Endpoint for predictions Lexcom (DISABLED - ML models not available)
+    # path(r'lexcom_five_class/', lexcomia.LexcomIA_ApiView.as_view(
+    #     {'post': 'probability_percentage'}), name="probability_percentage"),
 
     # Endpoint for reset password
     path(r'password_reset/', include('django_rest_passwordreset.urls',

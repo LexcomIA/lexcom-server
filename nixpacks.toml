@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["python310", "postgresql"]
+
+[phases.install]
+cmds = ["pip install -r requirements/requirements.txt"]
+
+[phases.build]
+cmds = ["python manage.py collectstatic --noinput"]
+
+[start]
+cmd = "gunicorn core.wsgi:application --bind [::]:$PORT --workers 4 --timeout 300 --log-file -"

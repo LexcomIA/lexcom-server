@@ -27,5 +27,23 @@ log/
 .idea/
 
 venv
+.venv
 
+# ML Models (deploy separately to Railway)
 IAmodels
+api/IAmodels/*.joblib
+api/IAmodels/*.pkl
+
+# Railway
+.railway/
+
+# Environment files
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+
+# Backup settings
+core/settings_old.py
